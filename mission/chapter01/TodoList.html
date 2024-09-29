@@ -61,6 +61,14 @@
         .list, .donelist {
             margin-top: 10px;
         }
+        li {
+            padding: 10px;
+            border-bottom: 1.5px solid gray;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+        
     </style>
 </head>
 <body>
@@ -70,24 +78,73 @@
             <div class="line"></div>
         </div>
         <div class="input">
-            <input type="text" placeholder="스터디 계획을 작성해보세요" onkeydown="handleenter(event)">
+            <input id="textInput" type="text" placeholder="스터디 계획을 작성해보세요" onkeydown="handleenter(event)">
         </div>
         <div class="rowcontainer">
             <div class="list_container">
                 <h3 class="list_title">해야 할 일</h3>
-                <div class="list">
+                <div class="list" id="todoList">
+                    
                 </div>
             </div>
             <div class="list_container">
                 <h3 class="list_title">해낸 일</h3>
-                <div class="donelist">
+                <div class="donelist" id="doList">
 
                 </div>
             </div>
         </div>    
     </div>
     <script>
-        
+        //input에 키가 눌렸을 때 이벤트 처리 
+        document.getElementById("textInput").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); //새 줄 생김 방지
+                createText(); //할 일 추가 함수 호출
+            }
+        });
+
+        //새로운 할 일 항목 생성과 목록 추가
+        function createText() {
+            const inputField = document.getElementById("textInput");
+            const textGap = inputField.value.trim();  //공백 제거 
+
+            const textElement = document.createElement("li"); //li 태그로 할일 목록 
+            textElement.textContent = textGap; //할일 항목에 input 텍스트 설정 
+            inputField.value = ""; 
+            
+            //완료 버튼
+            const doneButton = document.createElement("button");
+            doneButton.textContent = "완료";
+            //버튼 클릭시 함수 실행 
+            doneButton.addEventListener("click", function () {
+                moveToCompletedList(textElement);
+            });
+            textElement.appendChild(doneButton); //할일 항목에 완료 버튼 추가
+            document.getElementById("todoList").appendChild(textElement); //할일 목록에 추가
+        }
+
+        //완료 목록으로 이동
+        function moveToCompletedList(textElement) {
+            textElement.classList.add("finished"); //할일 항목에 이름을 붙여 완료표시 
+            //삭제 버튼
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "삭제";
+            //버튼 클릭시 함수 실행
+            deleteButton.addEventListener("click", function () {
+                deleteTask(textElement);
+            });
+            textElement.appendChild(deleteButton);
+            document.getElementById("doList").appendChild(textElement);
+
+            //기존의 완료 버튼 삭제 
+            const finishedButton = textElement.querySelector("button");
+            if (finishedButton) finishedButton.remove(); 
+        }
+
+        function deleteTask(textElement) {
+            textElement.remove();
+        }
     </script>
 </body>
 </html>
