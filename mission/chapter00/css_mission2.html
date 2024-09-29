@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);; 
+            grid-template-rows: repeat(10, 1fr); 
+            height: 100vh;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            grid-column: 1 / 2;
+            background-color: black;
+            color: white;
+        }
+
+        .menu {
+            grid-column: 2 / 5;
+            background-color: red;
+            color: white;
+        }
+
+        .hero {
+            grid-column: 1 / 5;
+            grid-row: 2 / 6;
+            background-color: skyblue;
+            color: white;
+        }
+
+        .main {
+            grid-column: 1 / 3;
+            grid-row: 6 / 10;
+            background-color: black;
+            color: white;
+        }
+
+        .image {
+            grid-column: 4 / 5;
+            grid-row: 6 / 8;
+            background-color: lightgreen;
+            color: white;
+        }
+
+        .extra {
+            grid-column: 4 / 5;
+            grid-row: 8 / 10;
+            background-color: green;
+            color: white;
+        }
+
+        .banner {
+            grid-column: 1 / 5;
+            grid-row: 10 / 12;
+            background-color: orange;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box header">HEADER</div>
+        <div class="box menu">MENU</div>
+        <div class="box hero">HERO</div>
+        <div class="box main">MAIN</div>
+        <div class="box image">IMAGE</div>
+        <div class="box extra">EXTRA</div>
+        <div class="box banner">BANNER</div>
+    </div>
+</body>
+</html>
