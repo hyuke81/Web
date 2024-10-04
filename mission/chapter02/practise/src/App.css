@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.input_box{
+    display: flex;
+}
+
+.input_holder {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.put_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    padding: 10px;
+}
+
+.put_button:hover {
+    background-color: gray;
+}
+
+.list {
+    margin-top: 10px;
+}
+
+.todo_list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.todo_list_text {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.todo_input_edit {
+    display: flex;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.delete_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    padding: 5px;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.delete_button:hover {
+    background-color: red;
+}
+
+.edit_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.edit_button:hover {
+    background-color: gray;
+}
