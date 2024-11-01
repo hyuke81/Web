@@ -13,13 +13,16 @@ const Nowplaying = () => {
     const { data: movies, isLoading, isError } = useCustomFetch(`/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}`);
     
     if (isLoading) {
-        return <div><h1 style={{color: 'white'}}>로딩중 입니다...</h1></div>;
+        return <div>
+            <h1 style={{color: 'white'}}>loading...</h1>
+        </div>;
     }
 
     if (isError) {
-        return <div><h1 style={{color: 'white'}}>에러 발생</h1></div>;
+        return <div>
+            <h1 style={{color: 'white'}}>Error...</h1>
+        </div>;
     }
-
     return (
         <S.CardList>
             {Array.isArray(movies) && movies.map((movie) => (
