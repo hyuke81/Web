@@ -1,7 +1,8 @@
-// MovieIdPage.jsx
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import useCustomFetch from "../hooks/useCustomFetch.js";
+import useCustomLoading from "../hooks/useCustomLoading.js";
+import useCustomError from "../hooks/useCustomError.js";
 
 const MovieDetailContainer = styled.div`
     color: white;
@@ -98,13 +99,11 @@ const MovieIdPage = () => {
     const { data: movie_credits, isLoading_credits, isError_credits } = useCustomFetch(`/movie/${movieId}/credits?language=ko-KR`);
     console.log('Movie credits:', movie_credits);
 
-    if (isLoading || isLoading_credits) {
-        return <div><h1 style={{color: 'white'}}>loading...</h1></div>;
-    }
+    const loadingComponent = useCustomLoading(isLoading || isLoading_credits);
+    const errorComponent = useCustomError(isError || isError_credits);
 
-    if (isError || isError_credits) {
-        return <div><h1 style={{color: 'white'}}>Error...</h1></div>;
-    }
+    if (loadingComponent) return loadingComponent;
+    if (errorComponent) return errorComponent;
 
     //빈 데이터 반환시 예외 처리 
     if (!movie || Object.keys(movie).length === 0) {
@@ -135,7 +134,7 @@ const MovieIdPage = () => {
                                     alt={castMember.name}
                                 />
                             ) : (
-                                <NoneCastPlace />
+                                <NoneCastPlace /> //데이터 없으면 다른 css 적용
                             )}
                             <CastName>{castMember.name}</CastName>
                             <CastCharacter>({castMember.character})</CastCharacter>

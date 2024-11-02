@@ -2,6 +2,8 @@ import { useState } from "react";
 import Card from "../components/Card.jsx";
 import * as S from '../styles/movies.style.jsx';
 import useCustomFetch from "../hooks/useCustomFetch.js";
+import useCustomLoading from "../hooks/useCustomLoading.js";
+import useCustomError from "../hooks/useCustomError.js";
 
 const MoviesPage = () => {
     const [clickedMovie, setClickedMovie] = useState(null);
@@ -12,17 +14,11 @@ const MoviesPage = () => {
 
     const { data: movies, isLoading, isError } = useCustomFetch(`/movie/popular?language=ko-KR&page=1`);
     
-    if (isLoading) {
-        return <div>
-            <h1 style={{color: 'white'}}>loading...</h1>
-        </div>;
-    }
+    const loadingComponent = useCustomLoading(isLoading);
+    const errorComponent = useCustomError(isError);
 
-    if (isError) {
-        return <div>
-            <h1 style={{color: 'white'}}>Error...</h1>
-        </div>;
-    }
+    if (loadingComponent) return loadingComponent;
+    if (errorComponent) return errorComponent;
 
     return (
         <S.CardList>
