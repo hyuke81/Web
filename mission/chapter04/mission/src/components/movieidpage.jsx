@@ -37,22 +37,21 @@ const MovieDetails = styled.p`
 
 const MovieOverview = styled.p`
     margin-top: 15px;
-    line-height: 1.5;
 `;
 
 const CastContainer = styled.div`
-    margin-top: 40px;
+    margin-top: 30px;
 `;
 
 const CastTitle = styled.h2`
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
 `;
 
 const CastList = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 13px;
 `;
 
 const CastItem = styled.div`
@@ -63,25 +62,33 @@ const CastItem = styled.div`
 `;
 
 const CastImage = styled.img`
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
 `;
 
 const CastName = styled.p`
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
     text-align: center;
 `;
 
 const CastCharacter = styled.p`
-    font-size: 12px;
-    color: #aaa;
+    font-size: 10px;
+    color: gray;
     margin: 0;
     text-align: center;
 `;
+
+const NoneCastPlace = styled.div`
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-bottom: 10px;
+`
 
 const MovieIdPage = () => {
     const { movieId } = useParams();
@@ -99,6 +106,7 @@ const MovieIdPage = () => {
         return <div><h1 style={{color: 'white'}}>Error...</h1></div>;
     }
 
+    //빈 데이터 반환시 예외 처리 
     if (!movie || Object.keys(movie).length === 0) {
         return <div><h1 style={{ color: 'white' }}>No movie data found</h1></div>;
     }
@@ -110,7 +118,7 @@ const MovieIdPage = () => {
                     <MovieTitle>{movie.title || movie.original_title}</MovieTitle>
                     <MovieDetails>⭐{movie.vote_average}</MovieDetails>
                     <MovieDetails>{new Date(movie.release_date).getFullYear()}</MovieDetails>
-                    <MovieDetails>상영 시간: {movie.runtime}분</MovieDetails>
+                    <MovieDetails>{movie.runtime}분</MovieDetails>
                     <MovieOverview>{movie.overview}</MovieOverview>
                 </MovieInfo>
             </HeaderContainer>
@@ -119,21 +127,21 @@ const MovieIdPage = () => {
                 <CastTitle>감독/출연</CastTitle>
                 {movie_credits && movie_credits.cast ? (
                     <CastList>
-                        {movie_credits.cast.slice(0, 12).map((castMember) => (
-                            <CastItem key={castMember.id}>
+                    {movie_credits.cast.slice(0, 12).map((castMember) => (
+                        <CastItem key={castMember.id}>
+                            {castMember.profile_path ? (
                                 <CastImage 
-                                    src={
-                                        castMember.profile_path 
-                                        ? `https://image.tmdb.org/t/p/w200${castMember.profile_path}` 
-                                        : 'https://via.placeholder.com/100'
-                                    } 
+                                    src={`https://image.tmdb.org/t/p/w200${castMember.profile_path}`}
                                     alt={castMember.name}
                                 />
-                                <CastName>{castMember.name}</CastName>
-                                <CastCharacter>({castMember.character})</CastCharacter>
-                            </CastItem>
-                        ))}
-                    </CastList>
+                            ) : (
+                                <NoneCastPlace />
+                            )}
+                            <CastName>{castMember.name}</CastName>
+                            <CastCharacter>({castMember.character})</CastCharacter>
+                        </CastItem>
+                    ))}
+                </CastList>
                 ) : (
                     <p>출연진 정보가 없습니다.</p>
                 )}
