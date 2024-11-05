@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Sidebar = styled.div`
     width: 15%;
     height: 100%;
-    background-color: #1a2c43;
+    background-color: #101010;
     padding: 10px;
 
     ul {

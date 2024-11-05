@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
-    background-color: #1a2c43;
+    background-color: #101010;
     color: white;
     padding: 15px 30px;
     display: flex;
@@ -12,7 +12,7 @@ export const Navbar = styled.nav`
 export const BrandButton = styled.button`
     background: none;
     border: none;
-    color: red;
+    color: #FF0558;
     font-size: 1.5em;
     cursor: pointer;
 
@@ -40,7 +40,7 @@ export const LoginButton = styled.button`
 `;
 
 export const SignupButton = styled.button`
-    background-color: red;
+    background-color: #FF0558;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -48,6 +48,6 @@ export const SignupButton = styled.button`
     font-size: 0.9em;
 
     &:hover {
-        background-color: #e73636;
+        background-color: black;
     }
 `;
