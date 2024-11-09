@@ -33,7 +33,7 @@ const SignupPage = () => {
                 <p className="error">{errors.password?.message}</p>
                 
                 <input 
-                    type="repassword" 
+                    type="password" 
                     placeholder="비밀번호를 다시 입력해주세요!" 
                     {...register("repassword")}
                     onBlur={() => trigger("repassword")}
