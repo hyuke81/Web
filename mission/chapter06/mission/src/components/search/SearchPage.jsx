@@ -1,5 +1,5 @@
 import './SearchPage.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../card/Card.jsx';
 import useCustomFetch from '../../hooks/useCustomFetch';
 import SkeletonCard from '../skeleton/SkeletonCard.jsx';
@@ -11,6 +11,24 @@ const SearchPage = () => {
     const [searchUrl, setSearchUrl] = useState(null);
     //데이터 요청
     const { data: movies, isLoading, isError } = useCustomFetch(searchUrl);
+    const [debouncedText, setDebouncedText] = useState(searchText);
+
+    //1초 딜레이 -> debouncedText에 저장
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedText(searchText);
+        }, 1000);
+
+        //새로운 입력시 기존 타이머 clear
+        return () => clearTimeout(timer);
+    }, [searchText]);
+
+    // debouncedText가 변경될 때마다 API 요청을 실행
+    useEffect(() => {
+        if (debouncedText) {
+            setSearchUrl(`/search/movie?query=${debouncedText}&language=ko-KR`);
+        }
+    }, [debouncedText]);
 
     const handleSearchChange = (e) => {
         setSearchText(e.target.value);
