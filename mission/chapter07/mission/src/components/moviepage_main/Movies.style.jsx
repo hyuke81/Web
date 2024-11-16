@@ -17,4 +17,3 @@ export const LoadingContainer = styled.div`
     background-color: black;
     color: white;
 `;
-
