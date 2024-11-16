@@ -1,0 +1,29 @@
+.CardContainer {
+    position: relative;
+    width: 150px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+}
+
+.CardImage {
+    width: 100%;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.CardContent {
+    margin-top: 5px;
+    color: white;
+}
+
+.Title {
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+.ReleaseDate {
+    font-size: 11px;
+    margin: 0px;
+}

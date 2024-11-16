@@ -1,0 +1,85 @@
+.MovieDetailContainer {
+    color: white;
+    padding: 20px;
+}
+
+.HeaderContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+.MovieInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.MovieTitle {
+    font-size: 36px;
+    margin: 0;
+}
+
+.MovieDetails {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.MovieOverview {
+    margin-top: 15px;
+}
+
+.CastContainer {
+    margin-top: 30px;
+}
+
+.CastTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.CastList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.CastItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.CastImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.CastName {
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+}
+
+.CastCharacter {
+    font-size: 10px;
+    color: gray;
+    margin: 0;
+    text-align: center;
+}
+
+.NoneCastPlace {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-bottom: 10px;
+}
