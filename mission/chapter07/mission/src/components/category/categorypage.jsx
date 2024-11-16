@@ -1,9 +1,9 @@
 import * as S from './category.style.jsx';
 import { useNavigate } from 'react-router-dom';
-import nowPlayingImg from '../../img/blue.jpg';
-import popularImg from '../../img/green.jpg';
-import topRatedImg from '../../img/purple.jpg';
-import upcomingImg from '../../img/yellow.jpg';
+import nowPlayingImg from '../../assets/blue.jpg';
+import popularImg from '../../assets/green.jpg';
+import topRatedImg from '../../assets/purple.jpg';
+import upcomingImg from '../../assets/yellow.jpg';
 
 const categories = [
     { id: 1, title: "현재 상영중인", image: nowPlayingImg, path: "/movies/now-playing" },
