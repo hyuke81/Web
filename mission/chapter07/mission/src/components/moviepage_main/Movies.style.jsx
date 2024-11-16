@@ -7,3 +7,14 @@ export const CardList = styled.div`
     padding: 5px;
     justify-items: center;
 `;
+
+export const LoadingContainer = styled.div`
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+`;
+
