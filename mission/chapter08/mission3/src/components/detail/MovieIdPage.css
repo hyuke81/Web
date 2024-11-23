@@ -1,0 +1,189 @@
+.MovieDetailContainer {
+    color: white;
+    padding: 20px;
+}
+
+.HeaderContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+.MovieInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.MovieTitle {
+    font-size: 36px;
+    margin: 0;
+}
+
+.MovieDetails {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.MovieOverview {
+    margin-top: 15px;
+}
+
+.CastContainer {
+    margin-top: 30px;
+}
+
+.CastTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.CastList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.CastItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.CastImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.CastName {
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+}
+
+.CastCharacter {
+    font-size: 10px;
+    color: gray;
+    margin: 0;
+    text-align: center;
+}
+
+.NoneCastPlace {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-bottom: 10px;
+}
+
+.ReviewContainer {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ReviewTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.ReviewList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ReviewItem {
+    background-color: rgb(37, 37, 37);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ReviewAuthor {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #FF0558;
+}
+
+.ReviewContent {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.ReviewDate {
+    font-size: 12px;
+    color: gray;
+}
+
+.NoReviews {
+    font-size: 16px;
+    text-align: center;
+    color: gray;
+}
+
+.SimilarMoviesContainer {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.SimilarMoviesTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.SimilarMoviesList {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    padding-bottom: 10px;
+}
+
+.SimilarMovieItem {
+    flex: 0 0 auto; 
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.SimilarMovieImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.SimilarMovieTitle {
+    font-size: 10px;
+    color: white;
+}
+
+.PlaceholderImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 180px;
+    background-color: gray;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
