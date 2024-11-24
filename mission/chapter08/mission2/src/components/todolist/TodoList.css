@@ -1,0 +1,120 @@
+.input_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.input_holder {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.put_button {
+    width: 98%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+.put_button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+}
+
+.todo_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 5px;
+}
+
+.todo_checkbox {
+    margin-right: 10px;
+}
+
+.todo_text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+.todo_title {
+    font-size: 16px;
+    margin: 0;
+    color: black;
+}
+
+.todo_content {
+    font-size: 16px;
+    color: black;
+    margin: 5px 0 0;
+}
+
+.edit_button,
+.delete_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.edit_button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.delete_button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.todo_input {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.save_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.cancel_button {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
