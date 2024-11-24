@@ -1,0 +1,16 @@
+.todo_detail {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.todo_detail h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.todo_detail p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
